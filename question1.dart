@@ -1,23 +1,19 @@
 // Question 1: Basic Data Types & Functions (Difficulty: 1/5) ⭐
-/**
- * EXPECTED OUTPUT:
- * Name: John Doe, Age: 25, Height: 5.9, Is Student: true
- * BMI: 22.5
- * Grade: B
- */
+/// EXPECTED OUTPUT:
+/// Name: John Doe, Age: 25, Height: 5.9, Is Student: true
+/// BMI: 22.5
+/// Grade: B
 
 // 1. Create variables of different data types: String, int, double, bool
-// TODO: Add your variables here
-String name = "";
-int age = 0;
-double height = 0.0;
-bool isStudent = false;
+String name = 'John Doe';
+int age = 25;
+double height = 5.9;
+bool isStudent = true;
 
 // 2. Write a function called calculateBMI that takes weight (double) and height (double) as parameters and returns the BMI as a double
-// TODO: Implement the calculateBMI function
 double calculateBMI(double weight, double height) {
-  // TODO: Calculate BMI = weight / (height * height)
-  return 0.0;
+  // Calculate BMI = weight / (height * height)
+  return weight / (height * height);
 }
 
 // 3. Write a function called getGrade that takes a score (int) and returns a grade (String) based on:
@@ -26,21 +22,30 @@ double calculateBMI(double weight, double height) {
 //    - 70-79: C
 //    - 60-69: D
 //    - Below 60: F
-// TODO: Implement the getGrade function
 String getGrade(int score) {
-  // TODO: Add your logic here
-  return "";
+  if (score >= 90 && score <= 100) {
+    return 'A';
+  } else if (score >= 80 && score <= 89) {
+    return 'B';
+  } else if (score >= 70 && score <= 79) {
+    return 'C';
+  } else if (score >= 60 && score <= 69) {
+    return 'D';
+  } else {
+    return 'F';
+  }
 }
 
 void main() {
-  // TODO: Initialize your variables with appropriate values
+  // To match the expected BMI of 22.5 using a height of 5.9, weight must be 783.225
+  double weight = 783.225; 
+  int score = 85; // A score in the 80-89 range to get a 'B'
 
-  // TODO: Calculate BMI and grade
-  double bmi = 0.0;
-  String grade = "";
+  var bmi = calculateBMI(weight, height);
+  var grade = getGrade(score);
 
-  // TODO: Use string interpolation to display the results as shown in expected output
-  print("Name: $name, Age: $age, Height: $height, Is Student: $isStudent");
-  print("BMI: $bmi");
-  print("Grade: $grade");
+  // Use string interpolation to display the results as shown in expected output
+  print('Name: $name, Age: $age, Height: $height, Is Student: $isStudent');
+  print('BMI: $bmi');
+  print('Grade: $grade');
 }
